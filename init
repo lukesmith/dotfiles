@@ -18,7 +18,9 @@ function symbolic_link {
   ln -s $1 $2
 }
 
-symbolic_link $DIR/zshrc ~/.zshrc
+symbolic_link $DIR/zsh/zshrc ~/.zshrc
+symbolic_link $DIR/zsh/themes/lukesmith.zsh-theme ~/.oh-my-zsh/themes/lukesmith.zsh-theme
+
 symbolic_link $DIR/vim/ ~/.vim
 symbolic_link $DIR/vim/vimrc ~/.vimrc
 symbolic_link $DIR/vim/gvimrc ~/.gvimrc
