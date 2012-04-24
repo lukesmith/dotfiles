@@ -1,0 +1,12 @@
+#!/bin/bash
+
+DIR="$( cd "$( dirname "$0" )" && pwd )"
+
+ZSHRC_ALIAS=~/.zshrc
+
+if [ -f $ZSHRC_ALIAS ];
+then
+  rm $ZSHRC_ALIAS
+fi
+
+ln -s $DIR/zshrc $ZSHRC_ALIAS
