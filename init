@@ -2,11 +2,23 @@
 
 DIR="$( cd "$( dirname "$0" )" && pwd )"
 
-ZSHRC_ALIAS=~/.zshrc
+function symbolic_link {
+  if [ -d $2 ]; then
+    if [ -L $2 ]; then
+      rm $2
+    else
+      rmdir $2
+    fi
+  else
+    if [ -f $2 ]; then
+      rm $2
+    fi
+  fi
 
-if [ -f $ZSHRC_ALIAS ];
-then
-  rm $ZSHRC_ALIAS
-fi
+  ln -s $1 $2
+}
 
-ln -s $DIR/zshrc $ZSHRC_ALIAS
+symbolic_link $DIR/zshrc ~/.zshrc
+symbolic_link $DIR/vim/ ~/.vim
+symbolic_link $DIR/vim/vimrc ~/.vimrc
+symbolic_link $DIR/vim/gvimrc ~/.gvimrc
