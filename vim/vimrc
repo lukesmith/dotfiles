@@ -19,7 +19,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'lukaszb/vim-web-indent'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'wincent/Command-T'
-
+Bundle 'zencoding-vim'
 Bundle 'bufexplorer.zip'
 
 "load ftplugins and indent files
@@ -155,7 +155,8 @@ nnoremap <C-p> :bprevious<CR>
 
 " Toggle wrapping
 set linebreak "wrap lines at convenient points
-set nowrap " Set no wrap and bind.
+set wrap " Set no wrap and bind.
+set tw=80
 nnoremap <F5> :set nowrap! <CR>
 
 " Replace whitespace.
