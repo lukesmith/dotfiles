@@ -13,6 +13,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'wincent/Command-T'
 Bundle 'zencoding-vim'
+Bundle 'L9'
 Bundle 'FuzzyFinder'
 
 "load ftplugins and indent files
