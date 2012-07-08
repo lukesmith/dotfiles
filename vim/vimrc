@@ -115,6 +115,9 @@ map <Leader>h :nohl <CR>
 " Normal mode: <Leader>e
 map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
+" FuzzyFinder
+map <S-n> :FufCoverageFile<CR>
+
 " NERDTree
 nnoremap <Leader>r :NERDTreeToggle<CR>
 
