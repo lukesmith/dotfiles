@@ -53,11 +53,12 @@ set autoindent
 set nofoldenable
 
 " Set line numbers
-set number
+set relativenumber
 
 set wildmode=list:longest   "make cmdline tab completion similar to bash
 set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
 set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
+set undofile
 
 "display tabs and trailing spaces
 set list
@@ -115,9 +116,6 @@ map <Leader>h :nohl <CR>
 " Normal mode: <Leader>e
 map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
-" FuzzyFinder
-map <S-n> :FufCoverageFile<CR>
-
 " NERDTree
 nnoremap <Leader>r :NERDTreeToggle<CR>
 
@@ -133,6 +131,7 @@ nnoremap <C-p> :bprevious<CR>
 set linebreak "wrap lines at convenient points
 set wrap " Set no wrap and bind.
 set tw=80
+set colorcolumn=85
 nnoremap <F5> :set nowrap! <CR>
 
 " Replace whitespace.
@@ -156,4 +155,6 @@ set spelllang=en_gb
 
 " Toggle spell checking on and off with `,s`
 let mapleader = ","
-nmap <silent> <leader>s :set spell!<CR>
+nmap <silent> <leader> :set spell!<CR>
+nnoremap <leader><space> :noh<cr>
+nnoremap <leader>f :FufCoverageFile<CR>
