@@ -5,6 +5,8 @@ export EDITOR=mvim
 
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/Users/lukesmith/.rvm/bin:/usr/local/git/bin
 
+export EnableNuGetPackageRestore=true
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
