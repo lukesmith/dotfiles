@@ -38,3 +38,12 @@ set laststatus=2
 " ctrlp.vim
 nnoremap <c-n> :CtrlP<CR>
 nnoremap <c-m> :CtrlPTag<CR>
+
+" NERDTree
+function! StartUp()
+  if 0 == argc()
+    NERDTree
+  end
+endfunction
+
+autocmd VimEnter * call StartUp()
