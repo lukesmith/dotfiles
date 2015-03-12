@@ -41,6 +41,10 @@ set laststatus=2
 nnoremap <c-n> :CtrlP<CR>
 nnoremap <c-m> :CtrlPTag<CR>
 
+" Switch to alternate file
+nnoremap <C-l> :bnext<CR>
+nnoremap <C-k> :bprevious<CR>
+
 " NERDTree
 function! StartUp()
   if 0 == argc()
