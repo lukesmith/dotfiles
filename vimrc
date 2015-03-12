@@ -45,6 +45,9 @@ nnoremap <c-m> :CtrlPTag<CR>
 nnoremap <C-l> :bnext<CR>
 nnoremap <C-k> :bprevious<CR>
 
+" Delete current buffer without closing window
+:command! Bd :bn|:bd#
+
 " NERDTree
 function! StartUp()
   if 0 == argc()
