@@ -22,6 +22,7 @@ filetype plugin indent on    " required
 
 " Set line numbers
 set relativenumber
+set number
 
 " display tabs and trailing spaces
 set list
