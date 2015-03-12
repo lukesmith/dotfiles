@@ -14,6 +14,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'blueyed/vim-diminactive'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
