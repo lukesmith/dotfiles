@@ -16,6 +16,7 @@ Bundle 'scrooloose/nerdtree'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'blueyed/vim-diminactive'
 Plugin 'scrooloose/syntastic'
+Plugin 'airblade/vim-gitgutter'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -57,3 +58,11 @@ function! StartUp()
 endfunction
 
 autocmd VimEnter * call StartUp()
+
+" gitgutter
+highlight clear SignColumn
+call gitgutter#highlight#define_highlights()
+highlight GitGutterAdd ctermfg=2* guifg=darkgreen
+highlight GitGutterChange ctermfg=3* guifg=darkyellow
+highlight GitGutterDelete ctermfg=red guifg=darkred
+highlight GitGutterChangeDelete ctermfg=3* guifg=darkyellow
