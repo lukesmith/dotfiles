@@ -15,6 +15,7 @@ Plugin 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'blueyed/vim-diminactive'
+Plugin 'scrooloose/syntastic'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
