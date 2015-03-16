@@ -21,3 +21,4 @@ function symbolic_link {
 symbolic_link $DIR/vimrc ~/.vimrc
 mkdir -p ~/.oh-my-zsh/custom/themes
 symbolic_link $DIR/zsh/agnoster.zsh-theme ~/.oh-my-zsh/custom/themes/agnoster.zsh-theme
+symbolic_link $DIR/gitconfig ~/.gitconfig
