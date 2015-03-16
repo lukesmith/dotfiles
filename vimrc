@@ -60,10 +60,13 @@ endfunction
 
 autocmd VimEnter * call StartUp()
 
+highlight CursorLineNr ctermbg=0*
+highlight SignColumn ctermbg=0*
+
 " gitgutter
-highlight clear SignColumn
+let g:gitgutter_sign_column_always=1
 call gitgutter#highlight#define_highlights()
-highlight GitGutterAdd ctermfg=2* guifg=darkgreen
-highlight GitGutterChange ctermfg=3* guifg=darkyellow
-highlight GitGutterDelete ctermfg=red guifg=darkred
-highlight GitGutterChangeDelete ctermfg=3* guifg=darkyellow
+highlight GitGutterAdd ctermbg=0* ctermfg=2* guifg=darkgreen
+highlight GitGutterChange ctermbg=0* ctermfg=3* guifg=darkyellow
+highlight GitGutterDelete ctermbg=0* ctermfg=red guifg=darkred
+highlight GitGutterChangeDelete ctermbg=0* ctermfg=3* guifg=darkyellow
