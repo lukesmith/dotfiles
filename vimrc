@@ -18,6 +18,7 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'blueyed/vim-diminactive'
 Plugin 'scrooloose/syntastic'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'thoughtbot/vim-rspec'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -70,3 +71,9 @@ highlight GitGutterAdd ctermbg=0* ctermfg=2* guifg=darkgreen
 highlight GitGutterChange ctermbg=0* ctermfg=3* guifg=darkyellow
 highlight GitGutterDelete ctermbg=0* ctermfg=red guifg=darkred
 highlight GitGutterChangeDelete ctermbg=0* ctermfg=3* guifg=darkyellow
+
+" RSpec.vim mappings
+:command! Rf :call RunCurrentSpecFile()
+:command! Rn :call RunNearestSpec()
+:command! Rl :call RunLastSpec()
+:command! Ra :call RunAllSpecs()
