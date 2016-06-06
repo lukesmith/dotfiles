@@ -1,0 +1,6 @@
+cask_args appdir: '/Applications'
+
+tap 'homebrew/bundle'
+
+cask 'atom'
+cask 'google-chrome'

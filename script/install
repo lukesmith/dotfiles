@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+#
+# Run all dotfiles installers.
+
+set -e
+
+cd "$(dirname $0)"/..
+
+if test $(which brew)
+then
+  # Run Homebrew through the Brewfile
+  echo "› brew bundle"
+  brew bundle --file=$DOTFILES/Brewfile
+
+  if test "$(uname)" = "Darwin"
+  then
+    brew bundle --file=$DOTFILES/Caskfile
+  fi
+fi
+
+# find the installers and run them iteratively
+find . -name install.sh | while read installer ; do sh -c "${installer}" ; done
