@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#
+# stocks
+#
+# `stocks` display the latest stock market
+clear && mop
