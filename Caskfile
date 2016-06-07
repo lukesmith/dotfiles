@@ -2,5 +2,16 @@ cask_args appdir: '/Applications'
 
 tap 'homebrew/bundle'
 
+cask 'adobe-creative-cloud'
 cask 'atom'
+cask 'alfred'
+cask 'dropbox'
+cask 'dockertoolbox'
+cask 'flux'
 cask 'google-chrome'
+cask 'istat-menus'
+cask 'skype'
+cask 'sourcetree'
+cask 'steam'
+cask 'the-unarchiver'
+
