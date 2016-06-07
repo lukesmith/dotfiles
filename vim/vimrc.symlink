@@ -19,6 +19,7 @@ Plugin 'blueyed/vim-diminactive'
 Plugin 'scrooloose/syntastic'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'thoughtbot/vim-rspec'
+Plugin 'christoomey/vim-tmux-navigator'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -46,7 +47,7 @@ nnoremap <c-n> :CtrlP<CR>
 nnoremap <c-m> :CtrlPTag<CR>
 
 " Switch to alternate file
-nnoremap <C-l> :bnext<CR>
+nnoremap <C-w><C-w> :bnext<CR>
 nnoremap <C-k> :bprevious<CR>
 
 " Delete current buffer without closing window
