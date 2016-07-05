@@ -1,4 +1,4 @@
-# cinst packages.config -y
+cinst packages.config -y
 
 # find the installers and run them iteratively
 $install_scripts = Get-ChildItem -Path . -Filter install.ps1 -Recurse
