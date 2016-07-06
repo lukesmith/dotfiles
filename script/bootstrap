@@ -140,9 +140,8 @@ install_dotfiles () {
 setup_gitconfig
 install_dotfiles
 
-# If we're on a Mac, let's install and setup homebrew.
 info "installing dependencies"
-if source bin/dot > /tmp/dotfiles-dot 2>&1
+if source bin/dot
 then
   success "dependencies installed"
 else
