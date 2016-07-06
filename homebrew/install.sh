@@ -21,6 +21,7 @@ then
       sudo apt install ruby -y
     fi
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"
+    export PATH="$PATH:$HOME/.linuxbrew/bin"
   fi
 fi
 
