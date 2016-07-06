@@ -9,10 +9,13 @@ Based on [holman/dotfiles](https://github.com/holman/dotfiles).
 Run
 
 ```shell
+sudo apt install git -y
 git clone https://github.com/lukesmith/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 script/bootstrap
 ```
+
+Going forward the `dot` command can be run to keep the configuration upto date
 
 ### Windows
 

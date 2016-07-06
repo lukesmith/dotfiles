@@ -16,6 +16,10 @@ then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   elif test "$(expr substr $(uname -s) 1 5)" = "Linux"
   then
+    if test ! $(which ruby)
+    then
+      sudo apt install ruby -y
+    fi
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"
   fi
 fi
