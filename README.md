@@ -18,7 +18,7 @@ script/bootstrap
 
 Run
 
-```shell
+```powershell
 Set-ExecutionPolicy RemoteSigned
-iwr https://github.com/lukesmith/scripts/bootstrap.ps1 -UseBasicParsing | iex
+iwr https://raw.githubusercontent.com/lukesmith/dotfiles/master/script/bootstrap.ps1 -UseBasicParsing | iex
 ```
