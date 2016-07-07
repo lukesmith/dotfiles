@@ -1,3 +1,4 @@
+tmp/
 .idea/
 *.un~
 vim/.netrwhist
