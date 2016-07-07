@@ -22,6 +22,8 @@ then
     fi
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"
     export PATH="$PATH:$HOME/.linuxbrew/bin"
+
+    $DOTFILES/homebrew/run_bundle.sh
   fi
 fi
 
