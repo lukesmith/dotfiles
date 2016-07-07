@@ -138,7 +138,6 @@ install_dotfiles () {
 }
 
 setup_gitconfig
-install_dotfiles
 
 info "installing dependencies"
 if source bin/dot
@@ -147,6 +146,8 @@ then
 else
   fail "error installing dependencies"
 fi
+
+install_dotfiles
 
 echo ''
 echo '  All installed!'
