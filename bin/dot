@@ -15,7 +15,7 @@ then
   echo "› brew update"
   brew update
 
-  $DOTFILES/homebrew/run_bundle.sh
+  $DOTFILES/homebrew/runbundle.sh
 fi
 
 # Install software
