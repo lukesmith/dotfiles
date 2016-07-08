@@ -139,13 +139,8 @@ install_dotfiles () {
 
 setup_gitconfig
 
-info "installing dependencies"
-if source bin/dot
-then
-  success "dependencies installed"
-else
-  fail "error installing dependencies"
-fi
+sudo apt install zsh -y
+zsh -c oh-my-zsh/install.sh
 
 install_dotfiles
 
