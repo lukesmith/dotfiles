@@ -140,7 +140,7 @@ install_dotfiles () {
 setup_gitconfig
 
 sudo apt install zsh -y
-zsh -c oh-my-zsh/install.sh
+oh-my-zsh/install.sh
 
 install_dotfiles
 
