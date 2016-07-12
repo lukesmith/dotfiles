@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+#
+# . docker-zone {zone}
+#
+# Changes the remote Docker host to use based on the {zone}
+
+ZONE=$1
+
+if [ "$ZONE" == "" ]; then
+  ZONE=`cat ~/.docker/defaultzone`
+fi
+
+if [ -d ~/.docker/$ZONE/ ]; then
+  export DOCKER_CERT_PATH=~/.docker/$ZONE
+  export DOCKER_HOST=tcp://`cat ~/.docker/$ZONE/host`:2376 DOCKER_TLS_VERIFY=1
+else
+  echo Zone $ZONE does not exist
+  exit 1
+fi

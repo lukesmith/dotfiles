@@ -7,11 +7,16 @@
 export DOTFILES=$HOME/.dotfiles
 
 # Install homebrew
-$DOTFILES/homebrew/install.sh 2>&1
+$DOTFILES/homebrew/install.sh
 
 # Upgrade homebrew
-echo "› brew update"
-brew update
+if test $(which brew)
+then
+  echo "› brew update"
+  brew update
+
+  $DOTFILES/homebrew/runbundle.sh
+fi
 
 # Install software
 echo "› $DOTFILES/script/install"

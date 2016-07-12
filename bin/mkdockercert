@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+#
+# mkdockercert {ip}
+#
+# `mkdockercert` creates a tls certificate for connecting to a remote Docker instance.
+# Only use this when wanting to connect to a Docker instance running on a local VM.
+
+HOST="$1"
+
+echo -n "Enter a passphrase for the certificates and press [ENTER]: "
+read -s PASSPHRASE
+
+printf "\n"
+
+echo -n "Enter a zone name for the remote docker instance and press [ENTER]: "
+read ZONE
+
+rm -rf tmp/
+mkdir -p tmp/
+openssl genrsa -aes256 -passout pass:$PASSPHRASE -out tmp/ca-key.pem 4096
+openssl req -new -x509 -days 365 -passin pass:$PASSPHRASE -key tmp/ca-key.pem -sha256 -out tmp/ca.pem
+openssl genrsa -out tmp/server-key.pem 4096
+openssl req -subj "//CN=$HOST" -sha256 -new -key tmp/server-key.pem -out tmp/server.csr
+echo subjectAltName = IP:10.10.10.20,IP:127.0.0.1,IP:$HOST > tmp/extfile.cnf
+
+openssl x509 -req -days 365 -sha256 -passin pass:$PASSPHRASE -in tmp/server.csr -CA tmp/ca.pem -CAkey tmp/ca-key.pem \
+  -CAcreateserial -out tmp/server-cert.pem -extfile tmp/extfile.cnf
+
+openssl genrsa -out tmp/key.pem 4096
+
+openssl req -subj '//CN=client' -new -key tmp/key.pem -out tmp/client.csr
+echo extendedKeyUsage = clientAuth > tmp/extfile.cnf
+
+openssl x509 -req -days 365 -sha256 -passin pass:$PASSPHRASE -in tmp/client.csr -CA tmp/ca.pem -CAkey tmp/ca-key.pem \
+  -CAcreateserial -out tmp/cert.pem -extfile tmp/extfile.cnf
+
+rm -v tmp/client.csr tmp/server.csr
+
+chmod -v 0400 tmp/ca-key.pem tmp/key.pem tmp/server-key.pem
+chmod -v 0400 tmp/ca-key.pem tmp/key.pem tmp/server-key.pem
+
+ssh -t $HOST "rm -f /tmp/ca.pem /tmp/server-cert.pem /tmp/server-key.pem"
+scp tmp/ca.pem tmp/server-cert.pem tmp/server-key.pem $HOST:/tmp
+ssh -t $HOST "sudo rm -rf /opt/docker && \
+  sudo mkdir -p /opt/docker/ && \
+  sudo mv /tmp/ca.pem /tmp/server-cert.pem /tmp/server-key.pem /opt/docker/ -f && \
+  sudo mkdir -p /etc/systemd/system/docker.service.d && \
+  sudo su -c 'echo \"[Service]\" > /etc/systemd/system/docker.service.d/$ZONE.conf' && \
+  sudo su -c 'echo \"ExecStart=\" >> /etc/systemd/system/docker.service.d/$ZONE.conf' && \
+  sudo su -c 'echo \"ExecStart=/usr/bin/docker daemon --tlsverify --tlscacert=/opt/docker/ca.pem --tlscert=/opt/docker/server-cert.pem --tlskey=/opt/docker/server-key.pem -H fd:// -H=0.0.0.0:2376\" >> /etc/systemd/system/docker.service.d/$ZONE.conf' && \
+  sudo systemctl daemon-reload && \
+  sudo systemctl restart docker"
+
+rm -rf ~/.docker/$ZONE
+mkdir -p ~/.docker/$ZONE
+mv tmp/ca.pem tmp/cert.pem tmp/key.pem ~/.docker/$ZONE -f
+
+echo $HOST >> ~/.docker/$ZONE/host
+
+if [ ! -f ~/.docker/defaultzone ]; then
+  echo $ZONE >> ~/.docker/defaultzone
+fi
+
+. docker-zone $ZONE
