@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 #
-# mkdockercert {ip}
+# mkdockercert {ip} {remote_user}
 #
 # `mkdockercert` creates a tls certificate for connecting to a remote Docker instance.
 # Only use this when wanting to connect to a Docker instance running on a local VM.
 
 HOST="$1"
+REMOTE_USER="$2"
 
 echo -n "Enter a passphrase for the certificates and press [ENTER]: "
 read -s PASSPHRASE
@@ -39,9 +40,9 @@ rm -v tmp/client.csr tmp/server.csr
 chmod -v 0400 tmp/ca-key.pem tmp/key.pem tmp/server-key.pem
 chmod -v 0400 tmp/ca-key.pem tmp/key.pem tmp/server-key.pem
 
-ssh -t $HOST "rm -f /tmp/ca.pem /tmp/server-cert.pem /tmp/server-key.pem"
-scp tmp/ca.pem tmp/server-cert.pem tmp/server-key.pem $HOST:/tmp
-ssh -t $HOST "sudo rm -rf /opt/docker && \
+ssh -t $REMOTE_USER@$HOST "rm -f /tmp/ca.pem /tmp/server-cert.pem /tmp/server-key.pem"
+scp tmp/ca.pem tmp/server-cert.pem tmp/server-key.pem $REMOTE_USER@$HOST:/tmp
+ssh -t $REMOTE_USER@$HOST "sudo rm -rf /opt/docker && \
   sudo mkdir -p /opt/docker/ && \
   sudo mv /tmp/ca.pem /tmp/server-cert.pem /tmp/server-key.pem /opt/docker/ -f && \
   sudo mkdir -p /etc/systemd/system/docker.service.d && \
