@@ -27,3 +27,7 @@ Set-ExecutionPolicy RemoteSigned
 iwr https://raw.githubusercontent.com/lukesmith/dotfiles/master/script/bootstrap.ps1 -UseBasicParsing | iex
 streamline-linux
 ```
+
+## Fonts
+
+Monaco for powerline - https://gist.github.com/kevinis/c788f85a654b2d7581d8
