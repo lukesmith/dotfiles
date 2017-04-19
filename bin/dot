@@ -6,18 +6,6 @@
 # to make sure you're on the latest and greatest.
 export DOTFILES=$HOME/.dotfiles
 
-# Install homebrew
-$DOTFILES/homebrew/install.sh
-
-# Upgrade homebrew
-if test $(which brew)
-then
-  echo "› brew update"
-  brew update
-
-  $DOTFILES/homebrew/runbundle.sh
-fi
-
 # Install software
 echo "› $DOTFILES/script/install"
 $DOTFILES/script/install
