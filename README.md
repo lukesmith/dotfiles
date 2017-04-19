@@ -9,7 +9,8 @@ Based on [holman/dotfiles](https://github.com/holman/dotfiles).
 Run
 
 ```shell
-sudo apt install git -y
+sudo apt install git zsh -y
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 git clone https://github.com/lukesmith/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 script/bootstrap
