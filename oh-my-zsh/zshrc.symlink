@@ -32,6 +32,10 @@ else
    export EDITOR='vim'
 fi
 
+if grep -q Microsoft /proc/version; then
+  # Running on Bash on Ubuntu on Windows
+fi
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
