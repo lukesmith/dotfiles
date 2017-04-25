@@ -6,7 +6,7 @@ set -e
 
 cd "$(dirname $0)"/..
 
-sudo apt install gnupg2 -y
+sudo apt install gnupg2 tig htop -y
 
 # find the installers and run them iteratively
 find . -name install.sh | while read installer ; do sh -c "${installer}" ; done
