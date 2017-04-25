@@ -84,7 +84,9 @@ prompt_git() {
 }
 
 prompt_rubyver() {
-  prompt_segment "001" black "$(~/.rvm/bin/rvm-prompt i v p g s)"
+  if [ -f ".ruby-version" ]; then
+    prompt_segment red black "$(~/.rvm/bin/rvm-prompt i v p g s)"
+  fi
 }
 
 # Dir: current working directory
