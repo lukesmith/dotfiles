@@ -21,6 +21,8 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'fatih/vim-go'
+Plugin 'tmux-plugins/vim-tmux'
+Plugin 'tpope/vim-git'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -62,6 +64,9 @@ function! StartUp()
 endfunction
 
 autocmd VimEnter * call StartUp()
+autocmd BufNewFile,BufRead {.,}tmux*.conf.symlink set ft=tmux | compiler tmux
+autocmd BufNewFile,BufRead gitconfig.symlink,gitconfig.local.symlink set ft=gitconfig
+autocmd BufNewFile,BufRead editorconfig.symlink set filetype=dosini
 
 highlight CursorLineNr ctermbg=0*
 highlight SignColumn ctermbg=0*
