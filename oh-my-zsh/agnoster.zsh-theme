@@ -84,7 +84,7 @@ prompt_git() {
 }
 
 prompt_rubyver() {
-  prompt_segment red black "$(~/.rvm/bin/rvm-prompt i v p g s)"
+  prompt_segment "006" black "$(~/.rvm/bin/rvm-prompt i v p g s)"
 }
 
 # Dir: current working directory
