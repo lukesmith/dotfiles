@@ -23,6 +23,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'fatih/vim-go'
 Plugin 'tmux-plugins/vim-tmux'
 Plugin 'tpope/vim-git'
+Bundle 'gabrielelana/vim-markdown'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
