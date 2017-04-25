@@ -2,5 +2,7 @@ tmp/
 .idea/
 *.un~
 vim/.netrwhist
+*.swp
+*.swo
 
 git/gitconfig.local.symlink
