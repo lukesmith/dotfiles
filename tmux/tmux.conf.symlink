@@ -1,7 +1,7 @@
 # 256 colors for vim
 set -g default-terminal "screen-256color"
-#
-# # Start window numbering at 1
+
+# Start window numbering at 1
 set-option -g base-index 1
 set-window-option -g pane-base-index 1
 
@@ -36,3 +36,25 @@ set -g @plugin 'seebi/tmux-colors-solarized'
 run '~/.tmux/plugins/tpm/tpm'
 
 set -g @colors-solarized 'dark'
+
+# Configure status bar
+set-window-option -g status-left-fg black
+set-window-option -g status-left-bg white
+set-window-option -g status-left " #S #[fg=white,bg=black]⮀#[bg=black]"
+
+set-window-option -g window-status-format "#[fg=green,bg=black] #I: #W#[fg=black,bg=black]⮀"
+set-window-option -g window-status-separator ""
+
+set-window-option -g window-status-current-bg green
+set-window-option -g window-status-current-fg white
+set-window-option -g window-status-current-format "#[fg=black,bg=green]⮀ #[fg=white,bg=green]#I: #W #[fg=green,bg=black]⮀"
+
+set-window-option -g status-right-bg green
+set-window-option -g status-right-fg white
+set-window-option -g status-right '#[fg=green,bg=black]#[fg=white,bg=green] %A %d %B : %H:%M '
+
+set-option -g pane-active-border-fg brightgreen #base01
+set-option -g pane-border-fg brightgreen #base01
+
+set-window-option -g window-style 'bg=black,fg=colour14'
+set-window-option -g window-active-style 'bg=colour8,fg=colour10'
