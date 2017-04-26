@@ -2,6 +2,8 @@
 
 Based on [holman/dotfiles](https://github.com/holman/dotfiles).
 
+![img](screenshot.gif)
+
 ## Install
 
 ### Linux
