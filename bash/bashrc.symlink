@@ -1,8 +1,3 @@
-# if running in terminal...
-if test -t 1; then
-  exec zsh
-fi
-
 OS="`uname`"
 case $OS in
   'Linux')
@@ -26,6 +21,13 @@ case $OS in
   'AIX') ;;
   *) ;;
 esac
+
+# if running in terminal...
+if [[ "$OS" == "Linux" ]]; then
+  if test -t 1; then
+    exec zsh
+  fi
+fi
 
 if [[ "$OS" == "Windows" ]]; then
   env=~/.ssh/agent.env
@@ -58,5 +60,7 @@ fi
 
 export PROJECTS=$HOME/projects
 export PATH="$DOTFILES/bin:$PATH"
+
+alias ubuntu="ssh luke@ubuntu.local"
 
 . docker-zone
