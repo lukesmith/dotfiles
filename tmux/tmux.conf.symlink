@@ -42,7 +42,7 @@ set-window-option -g status-left-fg black
 set-window-option -g status-left-bg white
 set-window-option -g status-left " #S #[fg=white,bg=black]⮀#[bg=black]"
 
-set-window-option -g window-status-format "#[fg=green,bg=black] #I: #W#[fg=black,bg=black]⮀"
+set-window-option -g window-status-format "#[fg=black,bg=colour10]⮀#[fg=white,bg=colour10] #I: #W #[fg=colour10,bg=black]⮀"
 set-window-option -g window-status-separator ""
 
 set-window-option -g window-status-current-bg green
