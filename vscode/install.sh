@@ -1,0 +1,1 @@
+ln -s "$DOTFILES_ROOT/vscode/settings.json" "~/.config/Code/User/settings.json"
