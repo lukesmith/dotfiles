@@ -8,10 +8,13 @@ cd "$(dirname $0)"/..
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     find . -name install.osx | while read installer ; do sh -c "${installer}" ; done
-elif [[ "$OSTYPE" == "linux-gnu" ]]; then
-    sudo apt install gnupg2 tig htop -y
+elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    sudo apt install gnupg2 tig htop tmux vim -y
 
-    find . -name install.sh | while read installer ; do sh -c "${installer}" ; done
+    find . -name install.sh | while read installer ; do
+      echo "${installer}"
+      sh -c "${installer}" ;
+    done
 else
     echo "No known installation for $OSTYPE"
     exit 1
