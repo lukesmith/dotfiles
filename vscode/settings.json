@@ -1,3 +1,6 @@
 {
-    "workbench.sideBar.location": "right"
+    "workbench.sideBar.location": "right",
+    "editor.renderWhitespace": "all",
+    "workbench.colorTheme": "Better Solarized Dark",
+    "markdown.extension.toc.githubCompatibility": true
 }
