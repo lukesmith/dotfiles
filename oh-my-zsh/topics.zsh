@@ -14,4 +14,12 @@ do
   source $file
 done
 
+# load any zsh files in the $HOME directory
+typeset -U home_zsh_files
+home_zsh_files=($HOME/*.zsh)
+for file in ${ZSH_FILES}; do
+  source $file
+done
+
+unset home_zsh_files
 unset config_files
