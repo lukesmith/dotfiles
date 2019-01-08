@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+source "$DOTFILES/script/functions.sh"
+
+vscode_path="$HOME/Library/Application Support/Code/User"
+mkdir -p $vscode_path
+rm -rf "$vscode_path/settings.json"
+ln -s "$DOTFILES/vscode/settings.json" "$vscode_path/settings.json"
+
+CODE_BIN="/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code"
+
+filename="$DOTFILES/vscode/extensions"
+
+function install_code_extension() {
+  "${CODE_BIN}" --install-extension "$1"
+}
+
+for_each_line_in "$filename" install_code_extension
