@@ -1,20 +1,8 @@
 cask_args appdir: '/Applications'
 
+tap 'homebrew/cask'
 tap 'homebrew/bundle'
 
-cask 'adobe-creative-cloud'
-cask 'atom'
-cask 'alfred'
-cask 'dropbox'
-cask 'dockertoolbox'
-cask 'flux'
-cask 'google-chrome'
-cask 'istat-menus'
-cask 'iterm2'
-cask 'pycharm'
-cask 'rubymine'
-cask 'skype'
-cask 'sourcetree'
-cask 'steam'
-cask 'the-unarchiver'
+#cask 'iterm2'
+brew 'tmux'
 

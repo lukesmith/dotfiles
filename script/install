@@ -7,6 +7,13 @@ set -e
 cd "$(dirname $0)"/..
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
+    if test ! $(which brew)
+    then
+        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    fi
+
+    brew bundle --file=$DOTFILES/Caskfile
+
     find . -name install.osx | while read installer ; do sh -c "${installer}" ; done
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
     sudo apt install gnupg2 tig htop tmux vim -y
