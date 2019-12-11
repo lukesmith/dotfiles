@@ -43,3 +43,7 @@ streamline-linux
 ## Fonts
 
 Monaco for powerline - https://gist.github.com/kevinis/c788f85a654b2d7581d8
+
+## Solarized Dark profile for Terminal.app on OSX
+
+https://gist.github.com/matijs/808eda8c133d41f9338f89a0077d6b95

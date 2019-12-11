@@ -21,6 +21,8 @@ plugins=(docker docker-compose git golang python rvm ruby tmuxinator vundle ssh-
 export PATH="/usr/local/bin:/usr/bin:/bin:$DOTFILES/bin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
+alias jest='nocorrect jest'
+
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
@@ -32,9 +34,9 @@ else
    export EDITOR='vim'
 fi
 
-if grep -q Microsoft /proc/version; then
+#if grep -q Microsoft /proc/version; then
   # Running on Bash on Ubuntu on Windows
-fi
+#fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -51,6 +53,8 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-if [[ ! $TERM =~ screen ]]; then
-  exec tmux
-fi
+#if [[ ! $TERM =~ screen ]]; then
+#  exec tmux
+#fi
+
+eval $(thefuck --alias)

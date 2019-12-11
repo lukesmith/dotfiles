@@ -1,6 +1,24 @@
 {
-    "workbench.sideBar.location": "right",
-    "editor.renderWhitespace": "all",
-    "workbench.colorTheme": "Better Solarized Dark",
-    "markdown.extension.toc.githubCompatibility": true
+  "workbench.sideBar.location": "right",
+  "editor.renderWhitespace": "all",
+  "workbench.colorTheme": "Better Solarized Dark",
+  "markdown.extension.toc.githubCompatibility": true,
+  "workbench.startupEditor": "newUntitledFile",
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.formatOnSave": true
+  },
+  "terminal.integrated.shell.osx": "zsh",
+  "terminal.integrated.fontFamily": "Menlo for Powerline",
+  "python.jediEnabled": false,
+  "[python]": {
+    "editor.rulers": [79, 120]
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "workbench.editor.showTabs": true,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
