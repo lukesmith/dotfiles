@@ -18,6 +18,10 @@ indent_style = tab
 indent_style = space
 indent_size = 4
 
+[*.kt]
+indent_style = space
+indent_size = 4
+
 [Makefile]
 indent_style = tabs
 indent_size = 4
