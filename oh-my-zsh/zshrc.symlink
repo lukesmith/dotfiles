@@ -14,7 +14,7 @@ HIST_STAMPS="mm/dd/yyyy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(docker docker-compose git golang python rvm ruby tmuxinator vundle ssh-agent encode64 aws tmux)
+plugins=(docker docker-compose git golang python rvm ruby tmuxinator vundle ssh-agent encode64 aws tmux pyenv)
 
 # User configuration
 
@@ -58,3 +58,7 @@ fi
 #fi
 
 eval $(thefuck --alias)
+
+export PATH=$PATH:~/Library/Android/sdk/platform-tools/
+alias ios-deeplink='xcrun simctl openurl booted'
+alias android-deeplink='adb shell am start -a android.intent.action.VIEW -d'
