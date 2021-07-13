@@ -3,6 +3,10 @@ cask_args appdir: '/Applications'
 tap 'homebrew/cask'
 tap 'homebrew/bundle'
 
-#cask 'iterm2'
+cask 'iterm2'
+cask 'visual-studio-code'
+cask 'google-cloud-sdk'
 brew 'tmux'
-
+brew 'yarn'
+brew 'nvm'
+brew 'thefuck'
